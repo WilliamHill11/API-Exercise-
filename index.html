@@ -9,16 +9,16 @@
     <img src="#" />
     <script>
       const img = document.querySelector('img');
-      fetch(
-        'https://api.giphy.com/v1/gifs/translate?api_key=82FI1U9vwbd2XX3TlDCriPXBRVZ5UqMm&s=ryan%20gosling',
-        { mode: 'cors' }
-      )
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (response) {
-          img.src = response.data.images.original.url;
-        });
+      async function asyncFunction() {
+        const response = await fetch(
+          'https://api.giphy.com/v1/gifs/translate?api_key=82FI1U9vwbd2XX3TlDCriPXBRVZ5UqMm&s=ryan%20gosling',
+          { mode: 'cors' }
+        );
+        const ryan = await response.json();
+        img.src = ryan.data.images.original.url;
+      }
+
+      asyncFunction();
     </script>
   </body>
 </html>
