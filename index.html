@@ -11,7 +11,7 @@
       const img = document.querySelector('img');
       async function asyncFunction() {
         const response = await fetch(
-          'https://api.giphy.com/v1/gifs/translate?api_key=82FI1U9vwbd2XX3TlDCriPXBRVZ5UqMm&s=ryan%20gosling',
+          'https://api.giphy.com/v1/gifs/translate?api_key=''&s=ryan%20gosling',
           { mode: 'cors' }
         );
         const data = await response.json();
